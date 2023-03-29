@@ -1,0 +1,31 @@
+The following questions test your aptitude for interacting with databases.The questions are based off 
+the following public SQL DB: docs.rfam.org/en/latest/database.html
+
+a. How many types of tigers can be found in the taxonomy table of the dataset? 
+What is the "ncbi_id" of the Sumatran Tiger? (hint: use the biological name of the tiger)
+
+Ans: 
+
+SELECT COUNT(DISTINCT species) AS num_tigers, ncbi_id
+FROM taxonomy
+WHERE genus = 'Panthera' AND species LIKE '%tigris%'
+GROUP BY ncbi_id;
+
+This query will return the number of unique tiger species found in the taxonomy table, as well as 
+the ncbi_id of each species.
+
+b. Find all the columns that can be used to connect the tables in the given database.
+
+We need to find all the columns that are present in multiple tables and can be used to join them. 
+We can do this by querying the information_schema database.
+
+SELECT column_name, COUNT(*) as num_tables
+FROM information_schema.columns
+WHERE table_schema = 'rfam'
+GROUP BY column_name
+HAVING COUNT(*) > 1
+ORDER BY num_tables DESC, column_name ASC;
+
+This query will return a list of all the columns that are present in more than one table, 
+along with the number of tables each column is present in. We can use these columns to 
+connect the tables in the database.

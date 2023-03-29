@@ -1,0 +1,19 @@
+Ques: This question is to test your aptitude for writing small shell scripts on Unix. You are given 
+this URL amfiindia.com/spages/NAVAll.txt. Write a shell script that extracts the Scheme Name and 
+Asset Value fields only and saves them in a csv file.
+
+Ans: 
+#!/bin/bash
+
+# Download the file and save it to a temporary file
+curl -sS "http://amfiindia.com/spages/NAVAll.txt" > /tmp/navall.txt
+
+# Extract the Scheme Name and Asset Value fields and save them to a CSV file
+cat /tmp/navall.txt | awk -F ';' '{print $4","$5}' > nav.csv
+
+# Remove the temporary file
+rm /tmp/navall.txt
+
+#The script uses curl to download the contents of the URL and saves it to a temporary file in the /tmp directory.
+#The script then uses awk to extract the Scheme Name (4th field) and Asset Value (5th field) from the 
+#downloaded file, separated by a comma, and saves them to a file named nav.csv.

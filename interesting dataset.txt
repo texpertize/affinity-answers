@@ -1,0 +1,12 @@
+Which is an interesting data set you discovered recently? Why is it your favorite? No datasets on Kaggle, please.
+
+Ans: One interesting dataset that I recently discovered is the Earthdata by NASA provides access to a wide variety of 
+earth science data from NASA's Earth Observing System Data and Information System (EOSDIS). EOSDIS manages data from 
+various satellite and ground-based missions, providing observations and measurements of the Earth's atmosphere, oceans,
+land surface, and cryosphere.
+One of the benefits of Earthdata by NASA datasets is the range of scientific applications they can be used for, such as 
+climate modeling, weather forecasting, land cover mapping, and disaster response. The datasets are also often updated 
+frequently, which allows for monitoring of changes over time.
+To use these datasets, researchers and scientists can access them through the Earthdata Search interface, which allows 
+for searching and filtering datasets based on parameters such as date range, location, and data type. The data can then 
+be downloaded in various formats, such as netCDF or HDF, and used for analysis or visualization using tools such as Python libraries.
